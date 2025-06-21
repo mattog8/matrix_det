@@ -1,0 +1,26 @@
+#!/bin/bash
+# Simple pre-commit hook that auto-installs dependencies and strips notebook outputs
+
+# Function to install package if missing
+install_if_missing() {
+    if ! command -v "$1" >/dev/null 2>&1; then
+        echo "Installing $1..."
+        pip install "$1" >/dev/null 2>&1
+    fi
+}
+
+# Get notebook files being committed
+notebooks=$(git diff --cached --name-only --diff-filter=ACM | grep '\.ipynb$' || true)
+
+if [ -n "$notebooks" ]; then
+    # Ensure nbstripout is available
+    install_if_missing nbstripout
+    
+    echo "Clearing outputs from notebooks: $notebooks"
+    
+    # Strip outputs and re-add files
+    echo "$notebooks" | xargs nbstripout
+    echo "$notebooks" | xargs git add
+    
+    echo "✅ Notebook outputs cleared"
+fi

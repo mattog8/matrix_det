@@ -1,0 +1,7 @@
+#!/bin/bash
+# Auto-setup git hooks when repo is cloned/checked out
+
+# Set this repository to use custom hooks
+git config core.hooksPath .githooks
+
+echo "✅ Git hooks configured automatically"

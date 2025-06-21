@@ -50,3 +50,5 @@ dependencies:
     - black  # Code formatter
     - flake8  # Linting
     - pytest  # Testing framework
+    - nbstripout  # Remove notebook outputs for clean commits
+    - pre-commit  # Git hooks framework
