@@ -1,0 +1,52 @@
+name: math-datascience
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Python
+  - python=3.11
+  
+  # Core scientific computing
+  - numpy>=1.24
+  - scipy>=1.10
+  - pandas>=2.0
+  
+  # Visualization
+  - matplotlib>=3.7
+  - seaborn>=0.12
+  - plotly>=5.14
+  
+  # Jupyter ecosystem
+  - jupyter
+  - jupyterlab
+  - notebook
+  - ipywidgets
+  - nbconvert
+  
+  # Machine learning
+  - scikit-learn>=1.3
+  - statsmodels>=0.14
+  
+  # Symbolic mathematics
+  - sympy>=1.12
+  
+  # Linear algebra and specialized math
+  - numba
+  - cvxpy
+  
+  # Data manipulation and I/O
+  - openpyxl
+  - xlrd
+  - h5py
+  - pytables
+  
+  # Development tools
+  - pip
+  - ipykernel
+  
+  # Additional useful packages via pip
+  - pip:
+    - jupyterlab-vim  # Vim keybindings for JupyterLab
+    - black  # Code formatter
+    - flake8  # Linting
+    - pytest  # Testing framework
