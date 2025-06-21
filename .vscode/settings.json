@@ -1,0 +1,8 @@
+{
+    "notebook.output.clearOutputOnSave": true,
+    "notebook.diff.ignoreOutputs": true,
+    "notebook.formatOnSave.enabled": true,
+    "files.associations": {
+        "*.ipynb": "jupyter-notebook"
+    }
+}
